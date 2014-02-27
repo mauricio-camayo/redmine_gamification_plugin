@@ -10,18 +10,18 @@
 }
 </style>
 
-<h2>評価機能</h2>
+<h2>Evaluative function</h2>
 
 <% unless @users.nil? %>
   <div id="rating-form">
   <%= form_tag({action: 'regist_rating'}) do %>
-    <%= select_tag('rate_user', options_for_select(@users), {class: 'rating-select'}) %>さんに
-    <%= select_tag('medal', options_for_select(@medals), {class: 'rating-select'}) %>を
-    <%= submit_tag '与える', {class: 'rating-select'} %>
+    <%= select_tag('rate_user', options_for_select(@users), {class: 'rating-select'}) %>To Mr.
+    <%= select_tag('medal', options_for_select(@medals), {class: 'rating-select'}) %>The
+    <%= submit_tag 'Award', {class: 'rating-select'} %>
   <% end %>
   </div>
 <% else %>
-  <h3>他に利用者がいないためこの機能を利用できません</h3>
+  <h3>You can not use this feature because it does not have users in other</h3>
 <% end %>
 
 <%= render 'sidebar' %>
