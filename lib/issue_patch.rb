@@ -26,7 +26,7 @@ module IssuePatch
       if Gamification.exists?({user_id: current_user_id})
         user = Gamification.find_by_user_id(current_user_id)
 
-        # ユーザのステータス更新
+        # Status updates of user
         GamificationUtil::up_point(user, 10)
         user.up_ticket_count
         user.save
