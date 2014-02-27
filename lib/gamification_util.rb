@@ -1,5 +1,5 @@
 module GamificationUtil
-  # レベルチェック関数
+  # Level check function
   def check_level(old, new)
     if old < new
       return new
@@ -7,7 +7,7 @@ module GamificationUtil
     old
   end
 
-  # レベルの計算
+  # Calculation of the level
   def decide_level(point)
     lvl = 1
     total = point
