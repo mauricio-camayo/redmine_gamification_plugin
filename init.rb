@@ -18,8 +18,8 @@ Redmine::Plugin.register :gamification do
 
   permission :gamification, {:gamification => [:project]}, :public => true
 
-  menu :top_menu, :gamification, {controller: 'gamification', action: 'index'}, :caption => 'ゲーミフィケーション'
-  menu :project_menu, :project_gamification, {controller: 'gamification', action: 'project'}, caption: 'ステータス', param: :project_id 
+  menu :top_menu, :gamification, {controller: 'gamification', action: 'index'}, :caption => 'Gamification Application'
+  menu :project_menu, :project_gamification, {controller: 'gamification', action: 'project'}, caption: 'Status', param: :project_id 
 end
 
 require_dependency 'hooks/controller_issues_edit_after_save_hook.rb'
