@@ -22,7 +22,7 @@ class GamificationController < ApplicationController
     user = Gamification.find_by_user_id(User.current.id)
     user.image = params[:gamification][:image].read
     if user.save
-      flash[:notice] = '画像をアップロードしました'
+      flash[:notice] = 'Ive uploaded the image'
       redirect_to action: 'index'
     end
   end
@@ -39,8 +39,8 @@ class GamificationController < ApplicationController
     current_user_id = User.current.id
     project_id = Project.find_by_identifier(params[:project_id]).id
 
-    # プロジェクトが存在し、参加しているかの判定を行い、
-    # 参加してない場合はプロジェクトへ参加する
+    # Determine if project exists and if they're already members,
+    # else register for project
     if Member.exists?({project_id: project_id, user_id: current_user_id}) && 
        !GamificationProject.exists?({project_id: project_id, user_id: current_user_id})
       project = GamificationProject.new
@@ -50,7 +50,7 @@ class GamificationController < ApplicationController
     end
 
     unless GamificationProject.exists?({user_id: current_user_id, project_id: project_id})
-      flash[:error] = "このプロジェクトに参加していません。"
+      flash[:error] = "Not a project member"
       redirect_to action: 'error'
       return
     end
@@ -92,7 +92,7 @@ class GamificationController < ApplicationController
     unless user.save
       redirect_to action: 'error'
     else
-      flash[:notice] = '登録が完了しました。'
+      flash[:notice] = 'Registration is complete.'
       redirect_to action: 'index'
     end
   end
@@ -107,8 +107,8 @@ class GamificationController < ApplicationController
 
   def rating
     my_account = Gamification.find_by_user_id(User.current.id)
-    @medals = {'サンクスメダル' => 'thank_medal', 'スマイルメダル' => 'smile_medal', '熱血メダル' => 'hot_medal', 
-               'ナイスアクションメダル' => 'nice_medal', 'コミュニケーションメダル' => 'comm_medal', '成長メダル' => 'grow_medal'}
+    @medals = {'Thanks medal' => 'thank_medal', 'Smile medal' => 'smile_medal', 'Blooded medal' => 'hot_medal', 
+               'Nice action medal' => 'nice_medal', 'Communication medal' => 'comm_medal', 'Growth medal' => 'grow_medal'}
 
     users = Gamification.all
     @users = {}
@@ -129,7 +129,7 @@ class GamificationController < ApplicationController
     user[medal] += 1
     user[mon_medal] += 1
     if user.save
-      flash[:notice] = '投票しました'
+      flash[:notice] = 'Has voted' #voted already?
       redirect_to action: 'rating'
     end
   end
@@ -144,7 +144,7 @@ class GamificationController < ApplicationController
     user_badge = GamificationBadge.find_by_user_id(current_user_id)
 
     if user.destroy && user_badge.destroy && GamificationProject.destroy_all({user_id: current_user_id})
-      flash[:notice] = 'ゲーミフィケーションの機能を削除しました'
+      flash[:notice] = 'I removed the function of Gamification application'
       redirect_to action: 'entry'
     else
       redirect_to action: 'error'
@@ -167,9 +167,9 @@ class GamificationController < ApplicationController
   def auth_gamification
     user_id = User.current.id
 
-    # 管理者またはゲストの場合はエラー
+    # Error if guest or administrator
     if user_id == Admin || user_id == Anonymous
-      flash[:error] = "この機能を利用できません。"
+      flash[:error] = "You can not use this feature."
       redirect_to action: 'error'
       return 
     end
