@@ -4,7 +4,7 @@ Translated plugin hard-coded strings from Japanese to English.
 
 To install the plugin, execute the following commands from the root of your Redmine directory:
 
-````bash
+````
 cd plugins
 git clone git://github.com/alexbevi/redmine_dropbox_attachments.git
 bundle install
