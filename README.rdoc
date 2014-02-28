@@ -1,3 +1,15 @@
 = gamification
 
 Translated plugin hard-coded strings from Japanese to English.
+
+To install the plugin, execute the following commands from the root of your Redmine directory:
+
+````bash
+cd plugins
+git clone git://github.com/alexbevi/redmine_dropbox_attachments.git
+bundle install
+````
+
+More information on installing Redmine plugins can be found at redmine.org.
+
+After the plugin is installed you will need to restart Redmine for the plugin to be available.
