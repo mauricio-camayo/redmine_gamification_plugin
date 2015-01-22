@@ -2,7 +2,7 @@
 
 This plugin gives the project team a way to motivate given levels, badges and ranking.
 
-This plugin was originally develop by Kazuto Horita (kzth/redmine_gamification_plugin) and then translated by GuruM (GuruOnNet/redmine_gamification_plugin)
+This plugin was originally develop by Kazuto Horita (http://kzth/redmine_gamification_plugin) and then translated by GuruM (http://GuruOnNet/redmine_gamification_plugin)
 
 = Installation
 
