@@ -26,7 +26,7 @@ module Hooks
           user = Gamification.find_by_user_id(current_user_id)
           user_badge = GamificationBadge.find_by_user_id(current_user_id)
 
-          user.up_point(10)
+          user.up_point(Setting.plugin_redmine_gamification_plugin['edit_issue_score'].to_i)
           
           # check level
           old_lvl = user.level
@@ -44,7 +44,7 @@ module Hooks
         # gamification_project_update
         if GamificationProject.exists?({user_id: current_user_id, project_id: project_id})
           user_project = GamificationProject.find_by_user_id_and_project_id(current_user_id, project_id)
-          user_project.up_point(10)
+          user_project.up_point(Setting.plugin_redmine_gamification_plugin['edit_issue_project_score'].to_i) 
           user_project.up_ticket_count
           user_project.save
         end

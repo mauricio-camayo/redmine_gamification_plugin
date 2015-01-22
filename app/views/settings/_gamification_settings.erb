@@ -1,0 +1,44 @@
+<%#*<p>%>
+  <%#=content_tag(:label, l(:label_group) + ":") %>
+  <%#=text_field_tag "settings[gamification]", @settings["gamification"], :size=>25 %><br/>
+<%#*</p>%>
+  <span>
+    <%=content_tag(:h2, l(:label_new_issue)) %>
+    <%=content_tag(:span, l(:label_new_issue_score_explanation)) %>
+    <p>
+      <%=content_tag(:label, l(:label_new_issue_score) + ":") %>
+      <%=number_field_tag "settings[new_issue_score]", @settings["new_issue_score"] %><br/>
+    </p>
+    <p>
+      <%=content_tag(:label, l(:label_new_issue_project_score) + ":") %>
+      <%=number_field_tag "settings[new_issue_project_score]", @settings["new_issue_project_score"] %><br/>
+    </p>
+  </span>  
+  <hr>
+  <span>
+    <%=content_tag(:h2, l(:label_edit_issue)) %>
+    <%=content_tag(:span, l(:label_edit_issue_score_explanation)) %>
+    <p>
+      <%=content_tag(:label, l(:label_edit_issue_score) + ":") %>
+      <%=number_field_tag "settings[edit_issue_score]", @settings["edit_issue_score"] %><br/>
+    </p>
+    <p>
+      <%=content_tag(:label, l(:label_edit_issue_project_score) + ":") %>
+      <%=number_field_tag "settings[edit_issue_project_score]", @settings["edit_issue_project_score"] %><br/>
+    </p>
+  </span>  
+  <hr>
+  <span>
+    <%=content_tag(:h2, l(:label_edit_wiki)) %>
+    <%=content_tag(:span, l(:label_edit_wiki_score_explanation)) %>
+    <p>
+      <%=content_tag(:label, l(:label_edit_wiki_score) + ":") %>
+      <%=number_field_tag "settings[edit_wiki_score]", @settings["edit_wiki_score"] %><br/>
+    </p>
+    <p>
+      <%=content_tag(:label, l(:label_edit_wiki_project_score) + ":") %>
+      <%=number_field_tag "settings[edit_wiki_project_score]", @settings["edit_wiki_project_score"] %><br/>
+    </p>
+  </span>  
+  <hr>
+  

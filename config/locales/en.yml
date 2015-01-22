@@ -1,3 +1,18 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  # my_label: "My label"
+  label_group: "Default group name"
+  label_new_issue: "New issue"
+  label_new_issue_score: "Score for new issue"
+  label_new_issue_project_score: "Score for new issue within a project"
+  label_new_issue_score_explanation: "This two add up if the creator is an active member of the project"
+  label_edit_issue: "Edit issue"
+  label_edit_issue_score: "Score for update issue"
+  label_edit_issue_project_score: "Score for update issue within a project"
+  label_edit_issue_score_explanation: "This two add up if the updater is an active member of the project"
+  label_edit_wiki: "Edit Wiki"
+  label_edit_wiki_score: "Score for update Wiki"
+  label_edit_wiki_project_score: "Score for update issue within a project"
+  label_edit_wiki_score_explanation: "This two add up if the updater is an active member of the project"
+
+

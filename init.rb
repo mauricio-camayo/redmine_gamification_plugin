@@ -14,7 +14,7 @@ Redmine::Plugin.register :redmine_gamification_plugin do
   name 'Gamification plugin'
   author 'Mauricio Camayo'
   description 'This plugin is gamification plugin in redmine'
-  version '0.0.1'
+  version '0.0.3'
   url 'https://github.com/mauricio-camayo/redmine_gamification_plugin'
   author_url 'https://github.com/mauricio-camayo'
 
@@ -22,6 +22,8 @@ Redmine::Plugin.register :redmine_gamification_plugin do
 
   menu :top_menu, :redmine_gamification_plugin, {controller: 'gamification', action: 'index'}, :caption => 'Gamification'
   menu :project_menu, :project_gamification, {controller: 'gamification', action: 'project'}, caption: 'Status', param: :project_id 
+
+  settings :default => {'empty' => true}, :partial => 'settings/gamification_settings'
 end
 
 require_dependency 'hooks/controller_issues_edit_after_save_hook.rb'
