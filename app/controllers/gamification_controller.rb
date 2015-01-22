@@ -168,7 +168,7 @@ class GamificationController < ApplicationController
     user_id = User.current.id
 
     # Error if guest or administrator
-    if user_id == Admin || user_id == Anonymous
+    if user_id == Anonymous
       flash[:error] = "You can not use this feature."
       redirect_to action: 'error'
       return 
