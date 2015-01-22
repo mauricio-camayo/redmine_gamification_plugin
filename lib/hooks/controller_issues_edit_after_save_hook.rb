@@ -34,7 +34,7 @@ module Hooks
           user.level = check_level(old_lvl, new_lvl)
 
           # update user badge
-          new_badge = check_level_badge(user_badge, user.level)
+          new_badge = check_badge(user_badge, user.level)
           new_badge.save
 
           user.up_ticket_count

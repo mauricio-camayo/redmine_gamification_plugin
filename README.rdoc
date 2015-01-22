@@ -7,7 +7,7 @@ To install the plugin, execute the following commands from the root of your Redm
 
 cd plugins  
 
-git clone git://github.com/GuruOnNet/redmine_gamification_plugin
+git clone git://github.com/mauricio-camayo/redmine_gamification_plugin
 
 bundle install  
 
