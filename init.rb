@@ -10,7 +10,7 @@
 #  end
 #end
 
-Redmine::Plugin.register :gamification do
+Redmine::Plugin.register :redmine_gamification_plugin do
   name 'Gamification plugin'
   author 'hrtkzt'
   description 'This plugin is gamification plugin in redmine'
