@@ -3,15 +3,15 @@
 <h3>Gamification application</h3>
 
 <div id="glist-menu">
-  <%= link_to_unless_current 'MyStatus', {action: 'index'} %><br>
-  <%= link_to_unless_current 'Tutorial', {action: 'tutorial'} %><br>
-  <%= link_to_unless_current 'Badge', {action: 'badges'} %><br>
-  <%= link_to_unless_current 'Evaluative function', {action: 'rating'} %><br>
-  <%= link_to_unless_current 'Ranking', {action: 'rankking'} %><br>
+  <%= link_to_unless_current l(:my_status), {action: 'index'} %><br>
+  <%= link_to_unless_current l(:tutorial), {action: 'tutorial'} %><br>
+  <%= link_to_unless_current l(:badge), {action: 'badges'} %><br>
+  <%= link_to_unless_current l(:evaluate), {action: 'rating'} %><br>
+  <%= link_to_unless_current l(:ranking), {action: 'rankking'} %><br>
 </div>
 
 <br><br>
 <div id="destroy">
-  <%= link_to 'I will remove the ability of a Gamification application', {action: 'destroy'}, confirm: 'Are you sure?'%>
+  <%= link_to l(:remove_label), {action: 'destroy'}, confirm: l(:are_you_sure)%>
 </div>
 <% end %>

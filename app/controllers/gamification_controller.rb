@@ -22,7 +22,7 @@ class GamificationController < ApplicationController
     user = Gamification.find_by_user_id(User.current.id)
     user.image = params[:gamification][:image].read
     if user.save
-      flash[:notice] = 'Ive uploaded the image'
+      flash[:notice] = l(:label_image_uploaded) 
       redirect_to action: 'index'
     end
   end
@@ -50,7 +50,7 @@ class GamificationController < ApplicationController
     end
 
     unless GamificationProject.exists?({user_id: current_user_id, project_id: project_id})
-      flash[:error] = "Not a project member"
+      flash[:error] = l(:not_project_member) 
       redirect_to action: 'error'
       return
     end
@@ -92,7 +92,7 @@ class GamificationController < ApplicationController
     unless user.save
       redirect_to action: 'error'
     else
-      flash[:notice] = 'Registration is complete.'
+      flash[:notice] = l(:registration_complete)
       redirect_to action: 'index'
     end
   end
@@ -129,7 +129,7 @@ class GamificationController < ApplicationController
     user[medal] += 1
     user[mon_medal] += 1
     if user.save
-      flash[:notice] = 'Has voted' #voted already?
+      flash[:notice] = l(:voted)
       redirect_to action: 'rating'
     end
   end
@@ -144,7 +144,7 @@ class GamificationController < ApplicationController
     user_badge = GamificationBadge.find_by_user_id(current_user_id)
 
     if user.destroy && user_badge.destroy && GamificationProject.destroy_all({user_id: current_user_id})
-      flash[:notice] = 'I removed the function of Gamification application'
+      flash[:notice] = l(:removed)
       redirect_to action: 'entry'
     else
       redirect_to action: 'error'
@@ -169,7 +169,7 @@ class GamificationController < ApplicationController
 
     # Error if guest or administrator
     if user_id == Anonymous
-      flash[:error] = "You can not use this feature."
+      flash[:error] = l(:cannot_use)
       redirect_to action: 'error'
       return 
     end

@@ -1,6 +1,6 @@
-<h2>Badge list</h2>
+<%=content_tag(:h2, l(:badge_list)) %>
 
-<h3><%= @user.user.name %>Badge of Mr.</h3>
+<%=content_tag(:h3, l(:badges_for) + @user.user.name) %>
 
 <table border="1">
   <tr>

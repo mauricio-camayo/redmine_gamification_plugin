@@ -2,6 +2,27 @@
 en:
   # my_label: "My label"
   label_group: "Default group name"
+  
+  # Controller
+  image_uploaded: "Image uploaded."
+  not_project_member: "Not a project member."
+  registration_complete: "Registration is complete."
+  voted: "Has voted."
+  removed: "Gamification removed."
+  cannot_use: "You can not use this feature."
+  
+  # Views
+  my_status: "My Status"
+  tutorial: "Tutorial"
+  badge: "Badges"
+  badge_list: "Badge list"
+  badges_for: "Badges for "
+  evaluate: "Evaluate Users"
+  ranking: "Ranking"
+  remove_label: "I want to remove Gamification"
+  are_you_sure: "Are you sure?"
+  
+  # configuration labels
   label_new_issue: "New issue"
   label_new_issue_score: "Score for new issue"
   label_new_issue_project_score: "Score for new issue within a project"
