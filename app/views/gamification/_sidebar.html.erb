@@ -1,6 +1,6 @@
 <% content_for :sidebar do %>
 
-<h3>Gamification application</h3>
+<%=content_tag(:h3, l(:plugin_name)) %>
 
 <div id="glist-menu">
   <%= link_to_unless_current l(:my_status), {action: 'index'} %><br>

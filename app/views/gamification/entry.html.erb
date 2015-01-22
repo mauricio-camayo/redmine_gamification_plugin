@@ -1,3 +1,3 @@
-<p>Are you sure you want to use the functionality of the Gamification activation?</p>
+<%=content_tag(:p, l(:do_you_want)) %>
 
-<%= button_to "Use", {action: 'create'}, method: 'get', confirm: 'Are you sure?'  %>
+<%= button_to l(:use_plugin), {action: 'create'}, method: 'get', confirm: l(:are_you_sure)  %>

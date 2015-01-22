@@ -17,42 +17,42 @@ window.onload = function() {
 }
 <% end %>
 
-<h2>Gamification application</h2>
+<%=content_tag(:h2, l(:plugin_name)) %>
 
-<h3 id="title"><span><%= @user.user.name %></span>Status of Mr.</h3>
+<h3 id="title"><span><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
 
 <div id="user-image">
   <% if @user.image.nil? %>
     <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'gamification'} %><br><br>
     <%= form_for @user, url: {action: 'upload_image'}, html: {multipart: true} do |f| %>
-      <%= f.label :image, 'Please upload the image' %>
+      <%= f.label :image, l(:upload_image) %>
       <%= f.file_field :image %>
-      <%= f.submit 'Upload' %>
+      <%= f.submit l(:upload) %>
     <% end %>
   <% else %>
     <%= image_tag url_for(action: 'get_image', id: @user), {width: 150, height: 150} %><br><br>
-    <%= link_to 'I want to remove the image', {action: 'remove_image'}, confirm: 'Are you sure you want to delete?' %><br>
+    <%= link_to l(:remove_image), {action: 'remove_image'}, confirm: l(:are_you_sure) %><br>
   <% end %>
-  <p>Username:<%= @user.user.login %></p>
+  <%=content_tag(:p, l(:username) + @user.user.login) %>
 </div>
 
 <div id="user-info">
   <div id="user-point">
-    <p><%= @user.point %></p> 
-    <p class="item">Point</p> 
+    <%=content_tag(:p,@user.point) %> 
+    <%=content_tag(:p, l(:score), class: "item") %> 
   </div>
   <div id="user-level">
-    <p><%= @user.level %></p> 
-    <p class="item">Level</p> 
+    <%=content_tag(:p, @user.level) %> 
+    <%=content_tag(:p, l(:level), class: "item") %>
   </div>
   <div id="user-ticket_count">
-    <p><%= @user.ticket_count %></p> 
-    <p class="item">Ticket number of updates</p> 
+    <%=content_tag(:p, @user.ticket_count) %> 
+    <%=content_tag(:p, l(:ticket_count), class: "item") %> 
   </div>
 </div>
 
 <br><br>
-<h2 style="clear: both;">Medals I got from other members</h2>
+<h2 style="clear: both;"><%= l(:medals_earned) %> </h2>
 
 <table border="1">
   <tr>

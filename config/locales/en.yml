@@ -1,7 +1,7 @@
 # English strings go here for Rails i18n
 en:
   # my_label: "My label"
-  label_group: "Default group name"
+  plugin_name: "Gamification"
   
   # Controller
   image_uploaded: "Image uploaded."
@@ -13,14 +13,26 @@ en:
   
   # Views
   my_status: "My Status"
+  status_for: "Status for "
   tutorial: "Tutorial"
   badge: "Badges"
   badge_list: "Badge list"
   badges_for: "Badges for "
   evaluate: "Evaluate Users"
   ranking: "Ranking"
+  do_you_want: "Do you want to use Gamification to motivate yourself?"
+  use_plugin: "Use"
   remove_label: "I want to remove Gamification"
   are_you_sure: "Are you sure?"
+  error: "Error"
+  upload_label: "Upload"
+  upload_image: "Please upload the image"
+  remove_image: "Remove image"
+  username: "User name: "
+  score: "Score"
+  level: "Level"
+  ticket_count: "Number of tickets with user updates"
+  medals_earned: "Medals I got from other members"
   
   # configuration labels
   label_new_issue: "New issue"
