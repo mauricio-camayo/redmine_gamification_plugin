@@ -16,9 +16,9 @@ Redmine::Plugin.register :redmine_gamification_plugin do
   description 'This plugin is gamification plugin in redmine'
   version '0.0.1'
 
-  permission :gamification, {:gamification => [:project]}, :public => true
+  permission :redmine_gamification_plugin, {:redmine_gamification_plugin => [:project]}, :public => true
 
-  menu :top_menu, :gamification, {controller: 'gamification', action: 'index'}, :caption => 'Gamification Application'
+  menu :top_menu, :redmine_gamification_plugin, {controller: 'gamification', action: 'index'}, :caption => 'Gamification Application'
   menu :project_menu, :project_gamification, {controller: 'gamification', action: 'project'}, caption: 'Status', param: :project_id 
 end
 

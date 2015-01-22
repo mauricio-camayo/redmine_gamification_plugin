@@ -11,6 +11,8 @@ git clone git://github.com/GuruOnNet/redmine_gamification_plugin
 
 bundle install  
 
+rake redmine:plugins:migrate RAILS_ENV=production
+
 
 More information on installing Redmine plugins can be found at redmine.org.
 
