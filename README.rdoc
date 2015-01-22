@@ -1,9 +1,12 @@
-= gamification
+= Gamification
 
-Translated plugin hard-coded strings from Japanese to English.
+This plugin gives the project team a way to motivate given levels, badges and ranking.
+
+This plugin was originally develop by Kazuto Horita (kzth/redmine_gamification_plugin) and then translated by GuruM (GuruOnNet/redmine_gamification_plugin)
+
+= Installation
 
 To install the plugin, execute the following commands from the root of your Redmine directory:
-
 
 cd plugins  
 
