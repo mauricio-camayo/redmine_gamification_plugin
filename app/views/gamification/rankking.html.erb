@@ -16,7 +16,7 @@
           <% if user.image.nil? %>
             <%= image_tag '/users/noimage.gif', {width: 50, height: 50, plugin: 'gamification'} %>
           <% else %>
-            <%= image_tag url_for(action: 'get_image', id: user), {width: 50, height: 50} %>
+            <%= image_tag url_for(action: 'get_image', id: user.id), {width: 50, height: 50} %>
           <% end %>
         </td>
         <td><%= user.user.name %></td>
