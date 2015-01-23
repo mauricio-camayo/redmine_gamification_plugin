@@ -161,18 +161,19 @@ class GamificationController < ApplicationController
     render_404
   end
 
-  Admin = 1
-  Anonymous = 2
+#  Admin = 1
+#  Anonymous = 2
 
   def auth_gamification
     user_id = User.current.id
 
     # Error if guest or administrator
-    if user_id == Anonymous
-      flash[:error] = l(:cannot_use)
-      redirect_to action: 'error'
-      return 
-    end
+    # This is not really working, will look into it again
+#    if user_id == Anonymous
+#      flash[:error] = l(:cannot_use)
+#      redirect_to action: 'error'
+#      return 
+#    end
 
     unless Gamification.exists?(user_id: user_id)
       redirect_to action: 'entry'
