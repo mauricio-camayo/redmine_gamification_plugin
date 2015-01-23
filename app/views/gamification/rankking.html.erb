@@ -12,7 +12,13 @@
     <% @users.each_with_index do |user, i| %>
       <tr>
         <td><%= i + 1 %></td>
-        <td><%= image_tag url_for(action: 'get_image', id: @user), {width: 50, height: 50} %></td>
+        <td>
+          <% if user.image.nil? %>
+            <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'gamification'} %>
+          <% else %>
+            <%= image_tag url_for(action: 'get_image', id: user), {width: 150, height: 150} %>
+          <% end %>
+        </td>
         <td><%= user.user.name %></td>
         <td><%= user.point %></td>
         <td><%= user.gamification_medal.thank_medal + user.gamification_medal.smile_medal + user.gamification_medal.hot_medal +
