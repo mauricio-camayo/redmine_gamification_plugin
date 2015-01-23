@@ -27,6 +27,7 @@ en:
   error: "Error"
   upload_label: "Upload"
   upload_image: "Please upload the image"
+  image_uploaded: "Image uploaded"
   remove_image: "Remove image"
   username: "User name"
   score: "Score"

@@ -22,7 +22,7 @@ class GamificationController < ApplicationController
     user = Gamification.find_by_user_id(User.current.id)
     user.image = params[:gamification][:image].read
     if user.save
-      flash[:notice] = l(:label_image_uploaded) 
+      flash[:notice] = l(:image_uploaded) 
       redirect_to action: 'index'
     end
   end
