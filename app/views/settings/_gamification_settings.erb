@@ -44,6 +44,28 @@
       <%=number_field_tag "settings[edit_wiki_project_score]", @settings["edit_wiki_project_score"] %><br/>
     </p>
     <%=content_tag(:span, l(:label_edit_wiki_score_explanation)) %>
-  </span>  
+  </span>
+  <hr>
+</span>
+<span>
+    <%= content_tag(:h2,l(:label_set_score_status_for)) %>
+    <table style="border:1px solid #000;border-collapse: collapse" >
+        <thead>
+            <tr>
+              <th style="border:1px solid #000"><%= l(:label_status) %> </th>
+              <th style="border:1px solid #000"><%= l(:label_forward) %> </th>
+              <th style="border:1px solid #000"><%= l(:label_backward) %> </th>
+            </tr>
+        </thead>
+        <tbody>
+          <% for status in IssueStatus.all -%>
+            <tr>
+                <td style="border:1px solid #000"><%= status.name %></td>
+                <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[add_score_status_"+ status.name + "]", @settings["add_score_status_"+status.name], :style => "width:50px") %></td>
+                <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[rem_score_status_"+ status.name + "]", @settings["rem_score_status_"+status.name], :style => "width:50px") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
 </span>
   

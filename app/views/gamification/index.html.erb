@@ -33,7 +33,7 @@ window.onload = function() {
     <%= image_tag url_for(action: 'get_image', id: @user), {width: 150, height: 150} %><br><br>
     <%= link_to l(:remove_image), {action: 'remove_image'}, confirm: l(:are_you_sure) %><br>
   <% end %>
-  <%=content_tag(:p, l(:username) + @user.user.login) %>
+  <%=content_tag(:p, l(:username) + ": " + @user.user.login) %>
 </div>
 
 <div id="user-info">
