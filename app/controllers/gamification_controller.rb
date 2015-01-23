@@ -13,8 +13,8 @@ class GamificationController < ApplicationController
     p @user.gamification_medal
   end
 
-  def get_image
-    @user = Gamification.find_by_user_id(User.current.id)
+  def get_image(userid)
+    @user = Gamification.find_by_user_id(userid)
     send_data(@user.image, type: 'image/png', disposition: 'inline')
   end
 
