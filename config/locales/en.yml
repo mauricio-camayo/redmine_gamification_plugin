@@ -34,7 +34,10 @@ en:
   ticket_count: "Number of tickets with user updates"
   medals_earned: "Medals I got from other members"
   project_members: "Members of this project"
+  assign_badge_users: "Assign to the user "
+  assign_badge_badges: " the badge "
   no_users: "You can not use this feature because it does not have users in other"
+  submit: "Submit"
   
   # configuration labels
   label_new_issue: "New issue"
