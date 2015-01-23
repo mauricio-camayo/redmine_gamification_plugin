@@ -49,6 +49,7 @@ en:
   label_edit_wiki_score: "Score for update Wiki"
   label_edit_wiki_project_score: "Score for update issue within a project"
   label_edit_wiki_score_explanation: "This two add up if the updater is an active member of the project"
+  label_use: "Use gamification plugin with "
   
   # Tutorial text
   tutorial_text: "Points are given according to different actions on Redmine, for every issue created or updated, but also for changes on the status"
