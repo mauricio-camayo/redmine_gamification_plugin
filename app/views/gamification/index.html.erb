@@ -27,7 +27,7 @@ window.onload = function() {
     <%= form_for @user, url: {action: 'upload_image'}, html: {multipart: true} do |f| %>
       <%= f.label :image, l(:upload_image) %>
       <%= f.file_field :image %>
-      <%= f.submit l(:upload) %>
+      <%= f.submit l(:upload_label) %>
     <% end %>
   <% else %>
     <%= image_tag url_for(action: 'get_image', id: @user), {width: 150, height: 150} %><br><br>
