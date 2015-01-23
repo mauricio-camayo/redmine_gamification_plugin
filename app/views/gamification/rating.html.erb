@@ -10,7 +10,7 @@
 }
 </style>
 
-<h2>Evaluative function</h2>
+<%=content_tag(:h2, l(:evaluate)) %>
 
 <% unless @users.nil? %>
   <div id="rating-form">
@@ -21,7 +21,7 @@
   <% end %>
   </div>
 <% else %>
-  <h3>You can not use this feature because it does not have users in other</h3>
+  <%=content_tag(:h3, l(:no_users)) %>
 <% end %>
 
 <%= render 'sidebar' %>

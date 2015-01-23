@@ -1,11 +1,11 @@
-<h2>Ranking</h2>
+<%=content_tag(:h2, l(:ranking)) %> 
 
 <div id="user-ranking">
   <table border="1">
     <tr>
-      <th>Rank</th>
-      <th>Username</th>
-      <th>Point</th>
+      <%=content_tag(:th, l(:ranking)) %>
+      <%=content_tag(:th, l(:username)) %> 
+      <%=content_tag(:th, l(:ticket_count)) %>
     </tr>
     <% @users.each_with_index do |user, i| %>
       <tr>
