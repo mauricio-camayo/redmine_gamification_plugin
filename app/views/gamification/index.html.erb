@@ -1,5 +1,5 @@
-<%= stylesheet_link_tag '/index.css', plugin: 'gamification', media: 'screen' %>
-<%= javascript_include_tag '/graph/radar.js', plugin: 'gamification' %>
+<%= stylesheet_link_tag '/index.css', plugin: 'redmine_gamification_plugin', media: 'screen' %>
+<%= javascript_include_tag '/graph/radar.js', plugin: 'redmine_gamification_plugin' %>
 <%= javascript_tag do %>
 window.onload = function() {
   var rc = new html5jp.graph.radar('sample');
@@ -23,7 +23,7 @@ window.onload = function() {
 
 <div id="user-image">
   <% if @user.image.nil? %>
-    <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'gamification'} %><br><br>
+    <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'redmine_gamification_plugin'} %><br><br>
     <%= form_for @user, url: {action: 'upload_image'}, html: {multipart: true} do |f| %>
       <%= f.label :image, l(:upload_image) %>
       <%= f.file_field :image %>
