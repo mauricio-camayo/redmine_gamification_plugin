@@ -22,7 +22,8 @@ window.onload = function() {
 <h3 id="title"><span><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
 
 <div id="user-image">
-<% avatar_with_people(@user) %>
+  <%= avatar(@user, :size => "50") %>
+
 </div>
 
 <div id="user-info">
