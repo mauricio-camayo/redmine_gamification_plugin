@@ -1,0 +1,74 @@
+# German strings go here for Rails i18n
+en:
+  plugin_name: "Spielifizierung"
+  
+  # Controller
+  image_uploaded: "Bild hochgeladen."
+  not_project_member: "Kein Projektmitglied."
+  registration_complete: "Registrierung vollständig."
+  voted: "Hat gewählt."
+  removed: "Spielifizierung entfernt."
+  cannot_use: "Du darfst die Funktion nicht nutzen."
+  
+  # Views
+  my_status: "Mein Status"
+  status_for: "Status für "
+  tutorial: "Tutorial"
+  badge: "Abzeichen"
+  badge_list: "Abzeichen Liste"
+  badges_for: "Abzeichen von "
+  evaluate: "Bewerte nutzer"
+  ranking: "Ranking"
+  do_you_want: "Willst du Spielifizierung nutzen, um dich selbst zu motivieren?"
+  use_plugin: "Benutze"
+  remove_label: "Ich will Spielifizierung entfernen."
+  are_you_sure: "Bist du sicher?"
+  error: "Fehler"
+  upload_label: "Hochladen"
+  upload_image: "Bitte lade ein Bild hoch"
+  image_uploaded: "Bild hochgeladen"
+  remove_image: "Bild löschen"
+  username: "Benutzername"
+  score: "Punktzahl"
+  level: "Level"
+  ticket_count: "Anzahl der Tickets mit Benutzeraktualisierung"
+  avatar: "Avatar"
+  medals: "Medaillen"
+  medals_earned: "Medaillen, die ich von anderen bekommen habe."
+  project_members: "Mitglieder in diesem Projekt"
+  assign_badge_users: "Weise dem Benutzer zu "
+  assign_badge_badges: " das Abzeichen "
+  no_users: "Du kannst die Funktion nicht nutzen, weil es keine Benutzer gibt"
+  submit: "Absenden"
+
+  # medals
+  medal_thanks: "Danke"
+  medal_smile: "Lächeln"
+  medal_passion: "Leidenschaft"
+  medal_nice_action: "Gut gemacht"
+  medal_communication: "Kommunication"
+  medal_growth: "Wachstum"
+  
+  # configuration labels
+  label_new_issue: "New issue"
+  label_new_issue_score: "Score for new issue"
+  label_new_issue_project_score: "Score for new issue within a project"
+  label_new_issue_score_explanation: "This two add up if the creator is an active member of the project"
+  label_edit_issue: "Edit issue"
+  label_edit_issue_score: "Score for update issue"
+  label_edit_issue_project_score: "Score for update issue within a project"
+  label_edit_issue_score_explanation: "This two add up if the updater is an active member of the project"
+  label_edit_wiki: "Edit Wiki"
+  label_edit_wiki_score: "Score for update Wiki"
+  label_edit_wiki_project_score: "Score for update issue within a project"
+  label_edit_wiki_score_explanation: "This two add up if the updater is an active member of the project"
+  label_use: "Use gamification plugin with "
+  label_set_score_status_for: "Set score for status: "
+  label_status: "Status name"
+  label_forward: "Going Forward"
+  label_backward: "Going Backward"
+  
+  # Tutorial text
+  tutorial_text: "Punkte werden für verschiedene Aktionen in Redmine vergeben. Für neue Tickets und für Änderungen an Tickets und dem Wiki."
+
+

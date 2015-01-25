@@ -41,6 +41,14 @@ en:
   assign_badge_badges: " the badge "
   no_users: "You can not use this feature because it does not have users in other"
   submit: "Submit"
+
+  # medals
+  medal_thanks: "Thanks"
+  medal_smile: "Smile"
+  medal_passion: "Passion"
+  medal_nice_action: "Nice action"
+  medal_communication: "Communication"
+  medal_growth: "Growth"
   
   # configuration labels
   label_new_issue: "New issue"

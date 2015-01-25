@@ -19,7 +19,7 @@ window.onload = function() {
 
 <%=content_tag(:h2, l(:plugin_name)) %>
 
-<h3 id="title"><span><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
+<h3 id="title"><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
 
 <div id="user-image">
   <%= avatar(@user.user, :size => "50") %>
@@ -46,12 +46,12 @@ window.onload = function() {
 
 <table border="1" class="list">
   <tr>
-    <th>Thanks</th>
-    <th>Smile</th>
-    <th>Passion</th>
-    <th>Nice action</th>
-    <th>Communication</th>
-    <th>Growth</th>
+    <th><%=content_tag(:span, l(:medal_thanks))  %></th>
+    <th><%=content_tag(:span, l(:medal_smile))  %>Smile</th>
+    <th><%=content_tag(:span, l(:medal_passion))  %>Passion</th>
+    <th><%=content_tag(:span, l(:medal_nice_action))  %>Nice action</th>
+    <th><%=content_tag(:span, l(:medal_communication))  %>Communication</th>
+    <th><%=content_tag(:span, l(:medal_growth))  %>Growth</th>
   </tr>
   <tr>
     <td><%= @user.gamification_medal.thank_medal %></td>
