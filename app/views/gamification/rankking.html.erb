@@ -1,7 +1,7 @@
 <%=content_tag(:h2, l(:ranking)) %> 
 
 <div id="user-ranking">
-  <table border="1" class="table">
+  <table border="1" class="list">
     <tr>
       <%=content_tag(:th, l(:ranking)) %>
       <%=content_tag(:th, l(:avatar)) %>
@@ -13,7 +13,7 @@
       <tr>
         <td><%= i + 1 %></td>
         <td>
-	  <%= avatar(@user.user, :size => "50") %> 
+	  <%= avatar(@user, :size => "50") %> 
        </td>
         <td><%= user.user.name %></td>
         <td><%= user.point %></td>
