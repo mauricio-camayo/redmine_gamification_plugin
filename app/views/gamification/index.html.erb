@@ -10,8 +10,8 @@ window.onload = function() {
                    medals.gamification_medal.nice_medal, medals.gamification_medal.comm_medal, medals.gamification_medal.grow_medal]
   ];
   var params = {
-    aCap: ['<%=content_tag(l(:medal_thanks))  %>', '<%=content_tag(l(:medal_smile))  %>', '<%=content_tag(l(:medal_passion))  %>',
-           '<%=content_tag(l(:medal_nice_action))  %>', '<%=content_tag(l(:medal_communication))  %>', '<%=content_tag(l(:medal_growth))  %>']
+    aCap: ['<%=l(:medal_thanks)  %>', '<%=l(:medal_smile)  %>', '<%=l(:medal_passion)  %>',
+           '<%=l(:medal_nice_action)  %>', '<%=l(:medal_communication)  %>', '<%=l(:medal_growth)  %>']
   };
   rc.draw(items, params);
 }
