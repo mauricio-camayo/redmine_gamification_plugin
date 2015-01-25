@@ -6,7 +6,7 @@ window.onload = function() {
   if (!rc) { return; }
   var medals = <%= raw @user.gamification_medal.to_json %>;
   var items = [
-    ['<%=content_tag(l(:medals)) %>', medals.gamification_medal.thank_medal, medals.gamification_medal.smile_medal, medals.gamification_medal.hot_medal,
+    ['<%=l(:medals) %>', medals.gamification_medal.thank_medal, medals.gamification_medal.smile_medal, medals.gamification_medal.hot_medal,
                    medals.gamification_medal.nice_medal, medals.gamification_medal.comm_medal, medals.gamification_medal.grow_medal]
   ];
   var params = {
