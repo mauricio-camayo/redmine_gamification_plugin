@@ -22,18 +22,7 @@ window.onload = function() {
 <h3 id="title"><span><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
 
 <div id="user-image">
-  <% if @user.image.nil? %>
-    <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'redmine_gamification_plugin'} %><br><br>
-    <%= form_for @user, url: {action: 'upload_image'}, html: {multipart: true} do |f| %>
-      <%= f.label :image, l(:upload_image) %>
-      <%= f.file_field :image %>
-      <%= f.submit l(:upload_label) %>
-    <% end %>
-  <% else %>
-    <%= image_tag url_for(action: 'get_image', id: @user), {width: 150, height: 150} %><br><br>
-    <%= link_to l(:remove_image), {action: 'remove_image'}, confirm: l(:are_you_sure) %><br>
-  <% end %>
-  <%=content_tag(:p, l(:username) + ": " + @user.user.login) %>
+<% avatar_with_people(@user) %>
 </div>
 
 <div id="user-info">
