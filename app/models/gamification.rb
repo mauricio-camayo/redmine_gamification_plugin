@@ -10,6 +10,10 @@ class Gamification < ActiveRecord::Base
     self.point += add_point
   end
 
+  def down_point(point)
+    self.point -= point
+  end
+
   def up_ticket_count
     self.ticket_count += 1
   end

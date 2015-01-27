@@ -57,9 +57,14 @@ en:
   label_edit_wiki_score_explanation: "This two add up if the updater is an active member of the project"
   label_use: "Use gamification plugin with "
   label_set_score_status_for: "Set score for status: "
+  label_set_score_tracker_for: "Set score for tracker: "
   label_status: "Status name"
+  label_tracker: "Status name"
   label_forward: "Going Forward"
   label_backward: "Going Backward"
+  label_assignee_to_current_title: "Give points to previous user or the new user"
+  label_assignee_to_current: "Give points to previous user"
+  label_assignee_to_current_explanation: "When changing status AND user at the same time, shall we assign the points to the previous user or the new user?"
   
   # Tutorial text
   tutorial_text: "Points are given according to different actions on Redmine, for every issue created or updated, but also for changes on the status"

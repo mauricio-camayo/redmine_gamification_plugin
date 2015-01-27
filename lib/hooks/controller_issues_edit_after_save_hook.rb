@@ -22,7 +22,7 @@ module Hooks
           end
           current_user_id = User.current.id
           project_id = Issue.find(context[:params][:id]).project_id
-
+          
             # gamification_user_update
             if Gamification.exists?({user_id: current_user_id})
               user = Gamification.find_by_user_id(current_user_id)

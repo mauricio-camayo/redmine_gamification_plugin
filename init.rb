@@ -27,5 +27,6 @@ Redmine::Plugin.register :redmine_gamification_plugin do
 end
 
 require_dependency 'hooks/controller_issues_edit_after_save_hook.rb'
+require_dependency 'hooks/controller_issues_edit_before_save_hook.rb'
 require_dependency 'hooks/controller_issues_new_after_save_hook.rb'
 require_dependency 'hooks/controller_wiki_edit_after_save_hook.rb'
