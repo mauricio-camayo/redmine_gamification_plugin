@@ -20,37 +20,11 @@ module Hooks
               context[:issue].deliverable = nil
             end
           end
-          #          current_user_id = User.current.id
+          
           original_issue = Issue.find(context[:params][:id])
           project_id = original_issue.project_id
-          #          previous_assigned_to_id = original_issue.assigned_to_id
-          #          assined_to_id = context[:params][:issue][:assigned_to_id]
-          #          tracker = Tracker.find_by_id(context[:params][:issue][:tracker_id])
           status_orig = IssueStatus.find_by_id(context[:params][:issue][:status_id])
           status_mod = IssueStatus.find_by_id(original_issue.status_id)
-          #          puts "BEFORE =============================\n\n"
-          
-          
-          #          controller
-          #          project
-          #          request
-          #          hook_caller
-          #          params
-          #          issue
-          #          time_entry
-          #          journal
-          #          
-          #          for cont in context.keys do
-          #            puts cont
-          #          end
-          #          puts context[:params]
-          #          puts "\n\n============================="
-          #          puts original_issue.status_id
-          #          puts original_issue.assigned_to_id
-          #          puts status_orig.position
-          #          puts status_mod.position
-          #          puts Setting.plugin_redmine_gamification_plugin
-          #          puts "\n\n============================="
           
           points = 0
           
@@ -77,17 +51,6 @@ module Hooks
               points += Setting.plugin_redmine_gamification_plugin['add_score_tracker_'+ tracker.name].to_i
             end
           end
-          
-          #          puts "\n\n============================="
-          #          puts "will set "
-          #          puts points
-          #          puts  "to "
-          #          
-          #          user = User.find_by_id(user_id)
-          #          puts user
-          #          puts "\n\n============================="
-          #
-          # gamification_user_update
             
           # Assigning points for the assignee
           if Gamification.exists?({user_id: user_id})
