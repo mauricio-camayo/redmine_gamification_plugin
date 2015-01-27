@@ -1,17 +1,17 @@
-<%= stylesheet_link_tag '/index.css', plugin: 'gamification', media: 'screen' %>
-<%= javascript_include_tag '/graph/radar.js', plugin: 'gamification' %>
+<%= stylesheet_link_tag '/index.css', plugin: 'redmine_gamification_plugin', media: 'screen' %>
+<%= javascript_include_tag '/graph/radar.js', plugin: 'redmine_gamification_plugin' %>
 <%= javascript_tag do %>
 window.onload = function() {
   var rc = new html5jp.graph.radar('sample');
   if (!rc) { return; }
   var medals = <%= raw @user.gamification_medal.to_json %>;
   var items = [
-    ['Medals Earned', medals.gamification_medal.thank_medal, medals.gamification_medal.smile_medal, medals.gamification_medal.hot_medal,
+    ['<%=l(:medals) %>', medals.gamification_medal.thank_medal, medals.gamification_medal.smile_medal, medals.gamification_medal.hot_medal,
                    medals.gamification_medal.nice_medal, medals.gamification_medal.comm_medal, medals.gamification_medal.grow_medal]
   ];
   var params = {
-    aCap: ['Thanks medal', 'Smile medal', 'Blooded medal',
-           'Nice medal', 'Communication medal', 'Growth medal']
+    aCap: ['<%=l(:medal_thanks)  %>', '<%=l(:medal_smile)  %>', '<%=l(:medal_passion)  %>',
+           '<%=l(:medal_nice_action)  %>', '<%=l(:medal_communication)  %>', '<%=l(:medal_growth)  %>']
   };
   rc.draw(items, params);
 }
@@ -19,21 +19,11 @@ window.onload = function() {
 
 <%=content_tag(:h2, l(:plugin_name)) %>
 
-<h3 id="title"><span><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
+<h3 id="title"><%=content_tag(:span, l(:status_for) + @user.user.name) %></h3>
 
 <div id="user-image">
-  <% if @user.image.nil? %>
-    <%= image_tag '/users/noimage.gif', {width: 150, height: 150, plugin: 'gamification'} %><br><br>
-    <%= form_for @user, url: {action: 'upload_image'}, html: {multipart: true} do |f| %>
-      <%= f.label :image, l(:upload_image) %>
-      <%= f.file_field :image %>
-      <%= f.submit l(:upload_label) %>
-    <% end %>
-  <% else %>
-    <%= image_tag url_for(action: 'get_image', id: @user), {width: 150, height: 150} %><br><br>
-    <%= link_to l(:remove_image), {action: 'remove_image'}, confirm: l(:are_you_sure) %><br>
-  <% end %>
-  <%=content_tag(:p, l(:username) + ": " + @user.user.login) %>
+  <%= avatar(@user.user, :size => "150") %>
+
 </div>
 
 <div id="user-info">
@@ -54,14 +44,14 @@ window.onload = function() {
 <br><br>
 <h2 style="clear: both;"><%= l(:medals_earned) %> </h2>
 
-<table border="1">
+<table border="1" class="list">
   <tr>
-    <th>Thanks</th>
-    <th>Smile</th>
-    <th>Passion</th>
-    <th>Nice action</th>
-    <th>Communication</th>
-    <th>Growth</th>
+    <th><%=content_tag(:span, l(:medal_thanks))  %></th>
+    <th><%=content_tag(:span, l(:medal_smile))  %></th>
+    <th><%=content_tag(:span, l(:medal_passion))  %></th>
+    <th><%=content_tag(:span, l(:medal_nice_action))  %></th>
+    <th><%=content_tag(:span, l(:medal_communication))  %></th>
+    <th><%=content_tag(:span, l(:medal_growth))  %></th>
   </tr>
   <tr>
     <td><%= @user.gamification_medal.thank_medal %></td>

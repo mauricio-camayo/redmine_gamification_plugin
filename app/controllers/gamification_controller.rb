@@ -140,7 +140,7 @@ class GamificationController < ApplicationController
     end
   end
 
-  def rankking
+  def ranking
     @users = Gamification.order("point DESC").limit(10)
   end
 

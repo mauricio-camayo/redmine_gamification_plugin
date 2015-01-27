@@ -4,7 +4,6 @@
   <table border="1" class="list">
     <tr>
       <%=content_tag(:th, l(:ranking)) %>
-      <%=content_tag(:th, l(:avatar)) %>
       <%=content_tag(:th, l(:username)) %> 
       <%=content_tag(:th, l(:score)) %>
       <%=content_tag(:th, l(:medals)) %>
@@ -12,9 +11,6 @@
     <% @users.each_with_index do |user, i| %>
       <tr>
         <td><%= i + 1 %></td>
-        <td>
-	  <%= avatar(@user, :size => "50") %> 
-       </td>
         <td><%= user.user.name %></td>
         <td><%= user.point %></td>
         <td><%= user.gamification_medal.thank_medal + user.gamification_medal.smile_medal + user.gamification_medal.hot_medal +
