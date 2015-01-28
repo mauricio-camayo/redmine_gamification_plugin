@@ -23,7 +23,7 @@
         <%= content_tag(:h2, l(:label_level_multiplier_title)) %>
         <p>
             <%= content_tag(:label, l(:label_level_multiplier)) %>
-            <%= number_field_tag("settings[level_multiplier]", @settings["level_multiplier"]) %>
+            <%= number_field_tag("settings[level_multiplier]", @settings["level_multiplier"], :step => 0.1, :min => 1) %>
         </p>
         <%= content_tag(:span, l(:label_level_multiplier_explanation)) %>
     </span>
