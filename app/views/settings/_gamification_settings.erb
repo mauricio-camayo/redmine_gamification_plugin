@@ -9,6 +9,26 @@
     </span>
     <hr>
 </span>
+<span id="level_points">
+    <span>
+        <%= content_tag(:h2, l(:label_first_level_points_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_first_level_points)) %>
+            <%= number_field_tag("settings[first_level_points]", @settings["first_level_points"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_first_level_points_explanation)) %>
+    </span>
+    <hr>
+    <span>
+        <%= content_tag(:h2, l(:label_level_multiplier_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_level_multiplier)) %>
+            <%= number_field_tag("settings[level_multiplier]", @settings["level_multiplier"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_level_multiplier_explanation)) %>
+    </span>
+    <hr>
+</span>
 <span id="issues_container">
     <span id="new_issues_container">
         <%=content_tag(:h2, l(:label_new_issue)) %>
