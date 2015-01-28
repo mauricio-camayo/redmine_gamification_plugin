@@ -7,6 +7,7 @@
       <%=content_tag(:th, l(:avatar), :width => "35") %>
       <%=content_tag(:th, l(:username)) %> 
       <%=content_tag(:th, l(:score)) %>
+      <%=content_tag(:th, l(:level)) %>
       <%=content_tag(:th, l(:medals)) %>
     </tr>
     <% @users.each_with_index do |user, i| %>
@@ -15,6 +16,7 @@
         <td><%= avatar(user.user, :size => "30") %></td>
         <td><%= user.user.name %></td>
         <td><%= user.point %></td>
+        <td><%= user.level %></td>
         <td><%= user.gamification_medal.thank_medal + user.gamification_medal.smile_medal + user.gamification_medal.hot_medal +
                 user.gamification_medal.nice_medal + user.gamification_medal.comm_medal + user.gamification_medal.grow_medal %></td>
       </tr>
