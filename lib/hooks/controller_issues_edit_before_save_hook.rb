@@ -28,13 +28,13 @@ module Hooks
           
           points = 0
           
-          if (status_orig.position < status_mod.position)
-            if (Setting.plugin_redmine_gamification_plugin.has_key?('rem_score_status_'+status_mod.name))
-              points += Setting.plugin_redmine_gamification_plugin['rem_score_status_'+status_mod.name].to_i
+          if (status_orig.position > status_mod.position)
+            if (Setting.plugin_redmine_gamification_plugin.has_key?('rem_score_status_'+status_orig.name))
+              points += Setting.plugin_redmine_gamification_plugin['rem_score_status_'+status_orig.name].to_i
             end
-          else if (status_orig.position > status_mod.position)
-              if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_status_'+status_orig.name))
-                points += Setting.plugin_redmine_gamification_plugin['add_score_status_'+status_orig.name].to_i
+          else if (status_orig.position < status_mod.position)
+              if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_status_'+status_mod.name))
+                points += Setting.plugin_redmine_gamification_plugin['add_score_status_'+status_mod.name].to_i
               end
             end
           end
