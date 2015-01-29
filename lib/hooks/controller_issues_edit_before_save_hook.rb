@@ -28,13 +28,13 @@ module Hooks
           
           points = 0
           
-          if (status_orig.position > status_mod.position)
-            if (Setting.plugin_redmine_gamification_plugin.has_key?('rem_score_status_'+status_orig.name))
-              points += Setting.plugin_redmine_gamification_plugin['rem_score_status_'+status_orig.name].to_i
+          if (status_orig.position < status_mod.position)
+            if (Setting.plugin_redmine_gamification_plugin.has_key?('rem_score_status_'+status_mod.name))
+              points += Setting.plugin_redmine_gamification_plugin['rem_score_status_'+status_mod.name].to_i
             end
-          else if (status_orig.position < status_mod.position)
-              if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_status_'+status_mod.name))
-                points += Setting.plugin_redmine_gamification_plugin['add_score_status_'+status_mod.name].to_i
+          else if (status_orig.position > status_mod.position)
+              if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_status_'+status_orig.name))
+                points += Setting.plugin_redmine_gamification_plugin['add_score_status_'+status_orig.name].to_i
               end
             end
           end
@@ -45,12 +45,13 @@ module Hooks
             user_id = context[:params][:issue][:assigned_to_id]
           end
           
-          if(original_issue.tracker_id != context[:params][:issue][:tracker_id])  
+          if(original_issue.tracker_id != context[:params][:issue][:tracker_id].to_i)  
             tracker = Tracker.find_by_id(context[:params][:issue][:tracker_id])
             if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_tracker_'+ tracker.name))
               points += Setting.plugin_redmine_gamification_plugin['add_score_tracker_'+ tracker.name].to_i
             end
           end
+          
             
           # Assigning points for the assignee
           if Gamification.exists?({user_id: user_id})
@@ -58,7 +59,7 @@ module Hooks
             user.up_point(points)
             user.save
           end
-
+          
           # gamification_project_update
           if GamificationProject.exists?({user_id: user_id, project_id: project_id})
             user_project = GamificationProject.find_by_user_id_and_project_id(user_id, project_id)

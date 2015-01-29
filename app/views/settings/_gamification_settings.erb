@@ -98,6 +98,7 @@
             <% end %>
         </tbody>
     </table>
+    <hr>
 </span>
 <span id="tracker_table">
     <%= content_tag(:h2,l(:label_set_score_tracker_for)) %>
@@ -117,5 +118,17 @@
             <% end %>
         </tbody>
     </table>
+    <hr>
+</span>
+<span id="closing_points">
+    <span>
+        <%= content_tag(:h2, l(:label_closing_points_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_closing_points)) %>
+            <%= number_field_tag("settings[closing_points]", @settings["closing_points"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_closing_points_explanation)) %>
+    </span>
+    <hr>
 </span>
 

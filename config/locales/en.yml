@@ -79,6 +79,9 @@ en:
   label_level_multiplier_title: "Level multiplier"
   label_level_multiplier: "Level multiplier"
   label_level_multiplier_explanation: "Ration in which every level increases"
+  label_closing_points_title: "Closing points"
+  label_closing_points: "Closing point to updater "
+  label_closing_points_explanation: "When a user close (see status) an issue, this points go to the updater (not the assignee)"
   
   # Tutorial text
   tutorial_text: "Points are given according to different actions on Redmine, for every issue created or updated, but also for changes on the status"
