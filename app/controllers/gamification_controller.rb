@@ -9,13 +9,13 @@ class GamificationController < ApplicationController
   before_filter :find_project, only: [:project]
 
   def index
-    @user = Gamification.find_by_user_id(User.current.id)
+    if params[:id]
+      user_id = params[:id]
+    else
+      user_id = User.current.id
+    end
+    @user = Gamification.find_by_user_id(user_id)
     p @user.gamification_medal
-  end
-
-  def get_image(id)
-    @user = Gamification.find_by_user_id(id)
-    send_data(@user.image, type: 'image/png', disposition: 'inline')
   end
 
   def upload_image

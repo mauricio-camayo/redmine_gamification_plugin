@@ -14,7 +14,7 @@
       <tr>
         <td><%= i + 1 %></td>
         <td><%= avatar(user.user, :size => "30") %></td>
-        <td><%= user.user.name %></td>
+        <td><%= link_to user.user.name, :action => 'index', :id => user.user.id %></td>
         <td><%= user.point %></td>
         <td><%= user.level %></td>
         <td><%= user.gamification_medal.thank_medal + user.gamification_medal.smile_medal + user.gamification_medal.hot_medal +
