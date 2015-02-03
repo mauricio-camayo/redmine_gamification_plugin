@@ -12,10 +12,17 @@ module GamificationUtil
     lvl = 1
     total = point
     up_point = 100
+    if Setting.plugin_redmine_gamification_plugin.has_key?('first_level_points')
+      up_point = Setting.plugin_redmine_gamification_plugin['first_level_points'].to_i
+    end
+    multiplier = 1.2
+    if Setting.plugin_redmine_gamification_plugin.has_key?('level_multiplier')
+      multiplier = Setting.plugin_redmine_gamification_plugin['level_multiplier'].to_f
+    end
     while total >= up_point
       lvl += 1
       total = total - up_point
-      up_point = up_point * 1.2
+      up_point = up_point * multiplier
     end
     lvl
   end

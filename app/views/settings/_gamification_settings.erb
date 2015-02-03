@@ -1,71 +1,134 @@
+<span id="issue_assigne">
+    <span>
+        <%= content_tag(:h2, l(:label_assignee_to_current_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_assignee_to_current)) %>
+            <%= check_box_tag("settings[assignee_to_current]", @settings["assignee_to_current"], @settings["assignee_to_current"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_assignee_to_current_explanation)) %>
+    </span>
+    <hr>
+</span>
+<span id="level_points">
+    <span>
+        <%= content_tag(:h2, l(:label_first_level_points_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_first_level_points)) %>
+            <%= number_field_tag("settings[first_level_points]", @settings["first_level_points"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_first_level_points_explanation)) %>
+    </span>
+    <hr>
+    <span>
+        <%= content_tag(:h2, l(:label_level_multiplier_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_level_multiplier)) %>
+            <%= number_field_tag("settings[level_multiplier]", @settings["level_multiplier"], :step => 0.1, :min => 1) %>
+        </p>
+        <%= content_tag(:span, l(:label_level_multiplier_explanation)) %>
+    </span>
+    <hr>
+</span>
 <span id="issues_container">
-  <span id="new_issues_container">
-    <%=content_tag(:h2, l(:label_new_issue)) %>
-    <%=content_tag(:span, l(:label_use) + l(:label_new_issue)) %>
-    <%=check_box_tag("settings[use_new_issue]", @settings["use_new_issue"], @settings["use_new_issue"])  %>
-    <p>
-      <%=content_tag(:label, l(:label_new_issue_score) + ":") %>
-      <%=number_field_tag "settings[new_issue_score]", @settings["new_issue_score"] %><br/>
-    </p>
-    <p>
-      <%=content_tag(:label, l(:label_new_issue_project_score) + ":") %>
-      <%=number_field_tag "settings[new_issue_project_score]", @settings["new_issue_project_score"] %><br/>
-    </p>
-    <%=content_tag(:span, l(:label_new_issue_score_explanation)) %>
-  </span>  
-  <hr>
-  <span id="edit_issues_container">
-    <%=content_tag(:h2, l(:label_edit_issue)) %>
-    <%=content_tag(:span, l(:label_use) + l(:label_edit_issue)) %>
-    <%=check_box_tag("settings[use_edit_issue]", @settings["use_edit_issue"], @settings["use_edit_issue"])  %>
-    <p>
-      <%=content_tag(:label, l(:label_edit_issue_score) + ":") %>
-      <%=number_field_tag "settings[edit_issue_score]", @settings["edit_issue_score"]  %><br/>
-    </p>
-    <p>
-      <%=content_tag(:label, l(:label_edit_issue_project_score) + ":") %>
-      <%=number_field_tag "settings[edit_issue_project_score]", @settings["edit_issue_project_score"] %><br/>
-    </p>
-    <%=content_tag(:span, l(:label_edit_issue_score_explanation)) %>
-  </span>  
-  <hr>
+    <span id="new_issues_container">
+        <%=content_tag(:h2, l(:label_new_issue)) %>
+        <%=content_tag(:span, l(:label_use) + l(:label_new_issue)) %>
+        <%=check_box_tag("settings[use_new_issue]", @settings["use_new_issue"], @settings["use_new_issue"])  %>
+        <p>
+            <%=content_tag(:label, l(:label_new_issue_score) + ":") %>
+            <%=number_field_tag "settings[new_issue_score]", @settings["new_issue_score"] %><br/>
+        </p>
+        <p>
+            <%=content_tag(:label, l(:label_new_issue_project_score) + ":") %>
+            <%=number_field_tag "settings[new_issue_project_score]", @settings["new_issue_project_score"] %><br/>
+        </p>
+        <%=content_tag(:span, l(:label_new_issue_score_explanation)) %>
+    </span>  
+    <hr>
+    <span id="edit_issues_container">
+        <%=content_tag(:h2, l(:label_edit_issue)) %>
+        <%=content_tag(:span, l(:label_use) + l(:label_edit_issue)) %>
+        <%=check_box_tag("settings[use_edit_issue]", @settings["use_edit_issue"], @settings["use_edit_issue"])  %>
+        <p>
+            <%=content_tag(:label, l(:label_edit_issue_score) + ":") %>
+            <%=number_field_tag "settings[edit_issue_score]", @settings["edit_issue_score"]  %><br/>
+        </p>
+        <p>
+            <%=content_tag(:label, l(:label_edit_issue_project_score) + ":") %>
+            <%=number_field_tag "settings[edit_issue_project_score]", @settings["edit_issue_project_score"] %><br/>
+        </p>
+        <%=content_tag(:span, l(:label_edit_issue_score_explanation)) %>
+    </span>  
+    <hr>
 </span>
 <span id="wiki_container">
-  <span id="edit_wiki_container">
-    <%=content_tag(:h2, l(:label_edit_wiki)) %>
-    <%=content_tag(:span, l(:label_use) + l(:label_edit_wiki)) %>
-    <%=check_box_tag("settings[use_edit_wiki]", @settings["use_edit_wiki"], @settings["use_edit_wiki"])  %>
-    <p>
-      <%=content_tag(:label, l(:label_edit_wiki_score) + ":") %>
-      <%=number_field_tag "settings[edit_wiki_score]", @settings["edit_wiki_score"] %><br/>
-    </p>
-    <p>
-      <%=content_tag(:label, l(:label_edit_wiki_project_score) + ":") %>
-      <%=number_field_tag "settings[edit_wiki_project_score]", @settings["edit_wiki_project_score"] %><br/>
-    </p>
-    <%=content_tag(:span, l(:label_edit_wiki_score_explanation)) %>
-  </span>
-  <hr>
+    <span id="edit_wiki_container">
+        <%=content_tag(:h2, l(:label_edit_wiki)) %>
+        <%=content_tag(:span, l(:label_use) + l(:label_edit_wiki)) %>
+        <%=check_box_tag("settings[use_edit_wiki]", @settings["use_edit_wiki"], @settings["use_edit_wiki"])  %>
+        <p>
+            <%=content_tag(:label, l(:label_edit_wiki_score) + ":") %>
+            <%=number_field_tag "settings[edit_wiki_score]", @settings["edit_wiki_score"] %><br/>
+        </p>
+        <p>
+            <%=content_tag(:label, l(:label_edit_wiki_project_score) + ":") %>
+            <%=number_field_tag "settings[edit_wiki_project_score]", @settings["edit_wiki_project_score"] %><br/>
+        </p>
+        <%=content_tag(:span, l(:label_edit_wiki_score_explanation)) %>
+    </span>
+    <hr>
 </span>
-<span>
+<span id="status_table">
     <%= content_tag(:h2,l(:label_set_score_status_for)) %>
     <table style="border:1px solid #000;border-collapse: collapse" >
         <thead>
             <tr>
-              <th style="border:1px solid #000"><%= l(:label_status) %> </th>
-              <th style="border:1px solid #000"><%= l(:label_forward) %> </th>
-              <th style="border:1px solid #000"><%= l(:label_backward) %> </th>
+                <th style="border:1px solid #000"><%= l(:label_status) %> </th>
+                <th style="border:1px solid #000"><%= l(:label_forward) %> </th>
+                <th style="border:1px solid #000"><%= l(:label_backward) %> </th>
             </tr>
         </thead>
         <tbody>
-          <% for status in IssueStatus.all -%>
-            <tr>
-                <td style="border:1px solid #000"><%= status.name %></td>
-                <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[add_score_status_"+ status.name + "]", @settings["add_score_status_"+status.name], :style => "width:50px") %></td>
-                <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[rem_score_status_"+ status.name + "]", @settings["rem_score_status_"+status.name], :style => "width:50px") %></td>
-            </tr>
-          <% end %>
+            <% for status in IssueStatus.all -%>
+              <tr>
+                  <td style="border:1px solid #000"><%= status.name %></td>
+                  <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[add_score_status_"+ status.name + "]", @settings["add_score_status_"+status.name], :style => "width:50px") %></td>
+                  <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[rem_score_status_"+ status.name + "]", @settings["rem_score_status_"+status.name], :style => "width:50px") %></td>
+              </tr>
+            <% end %>
         </tbody>
     </table>
+    <hr>
 </span>
-  
+<span id="tracker_table">
+    <%= content_tag(:h2,l(:label_set_score_tracker_for)) %>
+    <table style="border:1px solid #000;border-collapse: collapse" >
+        <thead>
+            <tr>
+                <th style="border:1px solid #000"><%= l(:label_tracker) %> </th>
+                <th style="border:1px solid #000"><%= l(:score) %> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for tracker in Tracker.all -%>
+              <tr>
+                  <td style="border:1px solid #000"><%= tracker.name %></td>
+                  <td style="text-align: right;border:1px solid #000"><%= number_field_tag("settings[add_score_tracker_"+ tracker.name + "]", @settings["add_score_tracker_"+tracker.name], :style => "width:50px") %></td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <hr>
+</span>
+<span id="closing_points">
+    <span>
+        <%= content_tag(:h2, l(:label_closing_points_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_closing_points)) %>
+            <%= number_field_tag("settings[closing_points]", @settings["closing_points"]) %>
+        </p>
+        <%= content_tag(:span, l(:label_closing_points_explanation)) %>
+    </span>
+    <hr>
+</span>
+
