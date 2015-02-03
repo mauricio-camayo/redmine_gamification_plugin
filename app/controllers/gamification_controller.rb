@@ -107,9 +107,8 @@ class GamificationController < ApplicationController
 
   def rating
     my_account = Gamification.find_by_user_id(User.current.id)
-    @medals = {'Thanks medal' => 'thank_medal', 'Smile medal' => 'smile_medal', 'Blooded medal' => 'hot_medal', 
-               'Nice action medal' => 'nice_medal', 'Communication medal' => 'comm_medal', 'Growth medal' => 'grow_medal'}
-
+    @medals = {l(:medal_thanks) => 'thank_medal', l(:medal_smile) => 'smile_medal', l(:medal_passion) => 'hot_medal', 
+               l(:medal_nice_action) => 'nice_medal', l(:medal_communication) => 'comm_medal',  l(:medal_growth) => 'grow_medal'}
     users = Gamification.all
     @users = {}
     users.each do |user|

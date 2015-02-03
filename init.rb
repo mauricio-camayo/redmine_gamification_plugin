@@ -20,7 +20,7 @@ Redmine::Plugin.register :redmine_gamification_plugin do
 
   permission :redmine_gamification_plugin, {:redmine_gamification_plugin => [:project]}, :public => true
 
-  menu :top_menu, :redmine_gamification_plugin, {controller: 'gamification', action: 'index'}, :caption => 'Gamification'
+  menu :top_menu, :redmine_gamification_plugin, {controller: 'gamification', action: 'index'}, :caption => l(:plugin_name)
   menu :project_menu, :project_gamification, {controller: 'gamification', action: 'project'}, caption: 'Status', param: :project_id 
 
   settings :default => {'empty' => true}, :partial => 'settings/gamification_settings'
