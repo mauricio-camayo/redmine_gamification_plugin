@@ -6,7 +6,7 @@ de:
   image_uploaded: "Bild hochgeladen."
   not_project_member: "Kein Projektmitglied."
   registration_complete: "Registrierung vollständig."
-  voted: "Hat gewählt."
+  voted: "Nutzer wurde bewertet."
   removed: "Spielifizierung entfernt."
   cannot_use: "Du darfst die Funktion nicht nutzen."
   
@@ -17,11 +17,11 @@ de:
   badge: "Abzeichen"
   badge_list: "Abzeichen Liste"
   badges_for: "Abzeichen von "
-  evaluate: "Bewerte nutzer"
-  ranking: "Ranking"
+  evaluate: "Bewerte Nutzer"
+  ranking: "Rangliste"
   do_you_want: "Willst du Spielifizierung nutzen, um dich selbst zu motivieren?"
   use_plugin: "Benutze"
-  remove_label: "Ich will Spielifizierung entfernen."
+  remove_label: "Nicht mehr teilnehmen"
   are_you_sure: "Bist du sicher?"
   error: "Fehler"
   upload_label: "Hochladen"
@@ -46,7 +46,7 @@ de:
   medal_smile: "Lächeln"
   medal_passion: "Leidenschaft"
   medal_nice_action: "Gut gemacht"
-  medal_communication: "Kommunication"
+  medal_communication: "Kommunikation"
   medal_growth: "Wachstum"
   
   # configuration labels
