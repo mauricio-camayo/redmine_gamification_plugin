@@ -15,6 +15,9 @@ class GamificationController < ApplicationController
       user_id = User.current.id
     end
     @user = Gamification.find_by_user_id(user_id)
+    if !@user
+      @user = Gamification.find_by_user_id(User.current.id)
+    end
     p @user.gamification_medal
   end
 
