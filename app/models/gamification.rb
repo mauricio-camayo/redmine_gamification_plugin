@@ -4,7 +4,7 @@ class Gamification < ActiveRecord::Base
   unloadable
 
   belongs_to :user
-  has_one :gamification_medal_assignment, {foreign_key: 'user_id', primary_key: 'medal_id'}
+  has_many :gamification_medal_assignment, foreign_key: 'user_assign_id', primary_key: 'user_id'
 
   def up_point(add_point)
     self.point += add_point

@@ -17,8 +17,7 @@
         <td><%= link_to user.user.name, :action => 'index', :id => user.user.id %></td>
         <td><%= user.point %></td>
         <td><%= user.level %></td>
-        <td><%= user.gamification_medal.thank_medal + user.gamification_medal.smile_medal + user.gamification_medal.hot_medal +
-                user.gamification_medal.nice_medal + user.gamification_medal.comm_medal + user.gamification_medal.grow_medal %></td>
+        <td><%= user.gamification_medal_assignment.count %></td>
       </tr>
     <% end %>
   </table>

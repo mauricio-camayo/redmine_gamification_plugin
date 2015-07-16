@@ -18,7 +18,17 @@ class GamificationController < ApplicationController
     if !@user
       @user = Gamification.find_by_user_id(User.current.id)
     end
-    p @user.gamification_medal
+    
+    @medal_types = GamificationMedalType.all
+    @medals = @user.gamification_medal_assignment
+    
+    @medal_count = {}
+    GamificationMedalType.all.each do |medal|
+      @medal_count[medal.name] = 0
+    end
+    @medals.each do |medal|
+      @medal_count[medal.gamification_medal_type.name] += 1
+    end
   end
 
   def upload_image
@@ -87,11 +97,6 @@ class GamificationController < ApplicationController
       redirect_to action: 'error'
     end
 
-    user_medal = GamificationMedal.new({user_id: current_user_id})
-    unless user_medal.save
-      redirect_to 'error'
-    end
-
     unless user.save
       redirect_to action: 'error'
     else
@@ -110,8 +115,11 @@ class GamificationController < ApplicationController
 
   def rating
     my_account = Gamification.find_by_user_id(User.current.id)
-    @medals = {l(:medal_thanks) => 'thank_medal', l(:medal_smile) => 'smile_medal', l(:medal_passion) => 'hot_medal', 
-               l(:medal_nice_action) => 'nice_medal', l(:medal_communication) => 'comm_medal',  l(:medal_growth) => 'grow_medal'}
+    medals = GamificationMedalType.all
+    @medals = {}
+    GamificationMedalType.all.each do |medal|
+      @medals[medal.name] = medal.id
+    end
     users = Gamification.all
     @users = {}
     users.each do |user|
@@ -125,12 +133,11 @@ class GamificationController < ApplicationController
   end
 
   def regist_rating
-    user = GamificationMedal.find_by_user_id(params[:rate_user].to_i)
-    medal = params[:medal]
-    mon_medal = 'monthly_'.concat(medal)
-    user[medal] += 1
-    user[mon_medal] += 1
-    if user.save
+    assignment = GamificationMedalAssignment.new
+    assignment.medal_id = params[:medal]
+    assignment.user_orig_id = User.current.id
+    assignment.user_assign_id = params[:rate_user].to_i
+    if assignment.save
       flash[:notice] = l(:voted)
       redirect_to action: 'rating'
     end

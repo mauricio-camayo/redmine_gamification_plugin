@@ -49,6 +49,9 @@ en:
   medal_nice_action: "Nice action"
   medal_communication: "Communication"
   medal_growth: "Growth"
+  got_medal:  "Got medal "
+  from: " from "
+  got_medal_on: " on "
   
   # configuration labels
   label_new_issue: "New issue"
