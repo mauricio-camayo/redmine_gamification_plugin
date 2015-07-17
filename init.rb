@@ -13,8 +13,8 @@
 Redmine::Plugin.register :redmine_gamification_plugin do
   name 'Gamification plugin'
   author 'Mauricio Camayo'
-  description 'This plugin is gamification plugin in redmine'
-  version '0.0.3'
+  description 'Gamification is the use of game mechanics, dynamics (e.g., competitive behaviour) and emotions (e.g., anticipation) in order to engage players employees in updating their issues on Redmine'
+  version '0.0.4'
   url 'https://github.com/mauricio-camayo/redmine_gamification_plugin'
   author_url 'https://github.com/mauricio-camayo'
 
