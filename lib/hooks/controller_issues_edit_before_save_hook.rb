@@ -57,7 +57,17 @@ module Hooks
           if Gamification.exists?({user_id: user_id})
             user = Gamification.find_by_user_id(user_id)
             user.up_point(points)
+            
+            # check level
+            old_lvl = user.level
+            new_lvl = decide_level(user.point)
+            user.level = check_level(old_lvl, new_lvl)
+            user.up_ticket_count
             user.save
+
+            # update user badge
+            new_badge = check_badge(user_badge, user.level)
+            new_badge.save
           end
           
           # gamification_project_update
