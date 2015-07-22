@@ -1,8 +1,10 @@
 = Gamification
 
+Gamification is the use of game mechanics, dynamics (e.g., competitive behaviour) and emotions (e.g., anticipation) in order to engage players employees in updating their issues on Redmine
+
 This plugin gives the project team a way to motivate given levels, badges and ranking.
 
-This plugin was originally develop by Kazuto Horita (http://kzth/redmine_gamification_plugin) and then translated by GuruM (http://GuruOnNet/redmine_gamification_plugin)
+This plugin was originally develop by Kazuto Horita (http://github.com/kzth/redmine_gamification_plugin) and then translated by GuruM (http://github.com/GuruOnNet/redmine_gamification_plugin)
 
 = Installation
 

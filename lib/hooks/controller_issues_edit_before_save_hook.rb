@@ -52,7 +52,6 @@ module Hooks
             end
           end
           
-            
           # Assigning points for the assignee
           if Gamification.exists?({user_id: user_id})
             user = Gamification.find_by_user_id(user_id)

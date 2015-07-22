@@ -39,13 +39,14 @@
   </tr>
 </table>
 <%#*<a href="#" onclick="Effect.toggle('medal_desc','blind',{duration:0.3});">Show more</a>%>
-<div id="medal_desc" style="display: block">
-<% @medals.each_with_index do |medal, i| %>
-  <%=content_tag(:p, l(:got_medal) + medal.gamification_medal_type.name + 
-      l(:from) + medal.user.firstname + " " + medal.user.lastname + 
-      l(:got_medal_on) + medal.assign_date.strftime("%m/%d/%Y - %H:%M"), class: "item") %> 
-<% end %>
-</div>
-<div><canvas width="600" height="500" id="sample"></canvas></div>
-
+<fieldset id="show_more" class="collapsible collapsed" >
+  <legend onclick="toggleFieldset(this);"><%= l(:show_more) %></legend>
+  <div id="medal_desc" style="display: none">
+  <% @medals.each_with_index do |medal, i| %>
+    <%=content_tag(:p, l(:got_medal) + medal.gamification_medal_type.name + 
+        l(:from) + medal.user.firstname + " " + medal.user.lastname + 
+        l(:got_medal_on) + medal.assign_date.strftime("%m/%d/%Y - %H:%M"), class: "item") %> 
+  <% end %>
+  </div>
+</fieldset>
 <%= render 'sidebar' %>

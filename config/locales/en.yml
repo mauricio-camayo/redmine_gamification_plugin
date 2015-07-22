@@ -41,6 +41,7 @@ en:
   assign_badge_badges: " the badge "
   no_users: "You can not use this feature because it does not have users in other"
   submit: "Submit"
+  show_more: "Show more"
 
   # medals
   medal_thanks: "Thanks"
