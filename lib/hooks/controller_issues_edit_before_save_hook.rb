@@ -55,6 +55,7 @@ module Hooks
           # Assigning points for the assignee
           if Gamification.exists?({user_id: user_id})
             user = Gamification.find_by_user_id(user_id)
+            user_badge = GamificationBadge.find_by_user_id(user_id)
             user.up_point(points)
             
             # check level
