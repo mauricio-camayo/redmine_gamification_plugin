@@ -144,7 +144,7 @@ class GamificationController < ApplicationController
   end
 
   def ranking
-    @users = Gamification.order("point DESC").limit(10)
+    @users = Gamification.order("point DESC") #.limit(10) # removing limit until pagination is done
   end
 
   def destroy
