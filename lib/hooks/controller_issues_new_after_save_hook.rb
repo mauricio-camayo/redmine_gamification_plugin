@@ -26,7 +26,7 @@ module Hooks
           # gamification_user_update
           if Gamification.exists?({user_id: current_user_id})
             user = Gamification.find_by_user_id(current_user_id)
-            user_badge = GamificationBadge.find_by_user_id(current_user_id)
+#            user_badge = GamificationBadge.find_by_user_id(current_user_id)
 
             user.up_point(Setting.plugin_redmine_gamification_plugin['new_issue_score'].to_i)
               
@@ -40,9 +40,9 @@ module Hooks
             new_lvl = decide_level(user.point)
             user.level = check_level(old_lvl, new_lvl)
 
-            # update user badge
-            new_badge = check_badge(user_badge, user.level)
-            new_badge.save
+#            # update user badge
+#            new_badge = check_badge(user_badge, user.level)
+#            new_badge.save
 
             user.up_ticket_count
             user.save
