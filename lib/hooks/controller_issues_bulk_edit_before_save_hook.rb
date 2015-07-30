@@ -45,11 +45,13 @@ module Hooks
           end
           
           if(Setting.plugin_redmine_gamification_plugin.has_key?("closing_points"))
-            status = IssueStatus.find_by_id(context[:params][:issue][:status_id])
-            if(status[:is_closed])
-              updater_user = Gamification.find_by_user_id(User.current.id)
-              updater_user.up_point(Setting.plugin_redmine_gamification_plugin['closing_points'].to_i)
-              updater_user.save
+            if context[:params][:issue].has_key?("status_id")
+              status = IssueStatus.find_by_id(context[:params][:issue][:status_id])
+              if(status[:is_closed])
+                updater_user = Gamification.find_by_user_id(User.current.id)
+                updater_user.up_point(Setting.plugin_redmine_gamification_plugin['closing_points'].to_i)
+                updater_user.save
+              end
             end
           end
             
