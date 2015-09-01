@@ -34,11 +34,11 @@ module Hooks
           else
             user_id = original_issue.assigned_to_id
           end
-                  
+          
           if context[:params][:issue].has_key?("tracker_id")   
             if(original_issue.tracker_id != context[:params][:issue][:tracker_id])  
               tracker = Tracker.find_by_id(context[:params][:issue][:tracker_id])
-              if (Setting.plugin_redmine_gamification_plugin.has_key?('add_score_tracker_'+ tracker.name))
+              if ( defined?(tracker).nil? && Setting.plugin_redmine_gamification_plugin.has_key?('add_score_tracker_'+ tracker.name))
                 points += Setting.plugin_redmine_gamification_plugin['add_score_tracker_'+ tracker.name].to_i
               end
             end
